@@ -1,0 +1,20 @@
+[LOG 2025-08-07T11:41:49.489908600] Processo 1 detectou falha do coordenador.
+[LOG 2025-08-07T11:41:49.519498] Novo coordenador eleito: Processo 4
+[LOG 2025-08-07T11:41:49.526496600] Processo 0 detectou falha do coordenador.
+[LOG 2025-08-07T11:41:49.529289600] Novo coordenador eleito: Processo 1
+[LOG 2025-08-07T12:57:38.762885800] Processo 1 detectou falha do coordenador.
+[LOG 2025-08-07T12:57:38.789581200] Novo coordenador eleito: Processo 3
+[LOG 2025-08-07T12:57:41.802163300] Processo 0 detectou falha do coordenador.
+[LOG 2025-08-07T12:57:41.808999900] Novo coordenador eleito: Processo 1
+[LOG 2025-08-07T13:05:09.547184100] Processo 1 detectou falha do coordenador.
+[LOG 2025-08-07T13:05:09.564993100] Novo coordenador eleito: Processo 3
+[LOG 2025-08-07T13:05:12.574828400] Processo 0 detectou falha do coordenador.
+[LOG 2025-08-07T13:05:12.576844400] Novo coordenador eleito: Processo 1
+[LOG 2025-08-07T13:11:14.880837100] Processo 1 detectou falha do coordenador.
+[LOG 2025-08-07T13:11:14.897364100] Novo coordenador eleito: Processo 3
+[LOG 2025-08-07T13:11:17.914154200] Processo 0 detectou falha do coordenador.
+[LOG 2025-08-07T13:11:17.919179900] Novo coordenador eleito: Processo 1
+[LOG 2025-08-07T13:36:29.305242100] Processo 1 detectou falha do coordenador.
+[LOG 2025-08-07T13:36:29.325509900] Novo coordenador eleito: Processo 3
+[LOG 2025-08-07T13:36:35.373043] Processo 0 detectou falha do coordenador.
+[LOG 2025-08-07T13:36:35.376042700] Novo coordenador eleito: Processo 1

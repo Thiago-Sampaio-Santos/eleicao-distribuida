@@ -1,21 +1,22 @@
 package processo;
 
 /* Essa classe aqui, representa cada processo da rede. 
- * Os atributos "ativo e coordenador" permitem saber se o processo está "vivo" e se ele é o líder.
- * E o métodoo enviarMensagem() é uma simples simulação de comunicaçãp.
+ * A execução é simulada por meio de uma thread.
  */
-public class Processo {
+public class Processo extends Thread {
     private int id;
     private boolean ativo;
     private boolean coordenador;
+    private boolean emExecucao;
 
     public Processo(int id) {
         this.id = id;
         this.ativo = true;
-        this.coordenador = true;
+        this.coordenador = false;
+        this.emExecucao = true;
     }
 
-    public int getId() {
+    public int getProcessoId() {
         return id;
     }
 
@@ -27,7 +28,7 @@ public class Processo {
         this.ativo = false;
     }
 
-        public void ativar() {
+    public void ativar() {
         this.ativo = true;
     }
 
@@ -40,8 +41,40 @@ public class Processo {
         this.coordenador = coordenador;
     }
 
+    
+    public void pararExecucao() {
+        this.emExecucao = false;
+    }
+
     public void enviarMensagem(String mensagem) {
-        //Simuula o envio de uma mensagem
         System.out.println("Processo " + id + " envia: " + mensagem);
+    }
+
+    @Override
+    public void run() {
+        while (emExecucao) {
+            if (ativo) {
+                try {
+                    Thread.sleep(2000); // simula atividade
+
+                    if (coordenador) {
+                        System.out.println("Processo " + id + " (coordenador) está ativo.");
+                    } else {
+                        System.out.println("Processo " + id + " está aguardando.");
+                    }
+
+                } catch (InterruptedException e) {
+                    System.err.println("Processo " + id + " foi interrompido.");
+                }
+            } else {
+                try {
+                    Thread.sleep(5000); // processo inativo demora mais
+                } catch (InterruptedException e) {
+                    System.err.println("Processo inativo " + id + " foi interrompido.");
+                }
+            }
+        }
+
+        System.out.println("Processo " + id + " terminou a execução.");
     }
 }

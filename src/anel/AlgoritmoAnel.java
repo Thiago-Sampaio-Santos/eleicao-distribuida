@@ -6,9 +6,9 @@ import processo.Processo;
 
 public class AlgoritmoAnel {
         public static void iniciarEleicao(List<Processo> processos, int iniciadorIndex) {
-        Logger.falhaDetectada(processos.get(iniciadorIndex).getId());
+        Logger.falhaDetectada(processos.get(iniciadorIndex).getProcessoId());
 
-        int eleito = processos.get(iniciadorIndex).getId();
+        int eleito = processos.get(iniciadorIndex).getProcessoId();
         int n = processos.size();
 
         int atual = (iniciadorIndex + 1) % n;
@@ -17,8 +17,8 @@ public class AlgoritmoAnel {
         while (atual != iniciadorIndex) {
             Processo p = processos.get(atual);
             if (p.isAtivo()) {
-                if (p.getId() > eleito) {
-                    eleito = p.getId(); // se o Id for maior que o atual, ele é atualizado
+                if (p.getProcessoId() > eleito) {
+                    eleito = p.getProcessoId(); // se o Id for maior que o atual, ele é atualizado
                 }
                 p.enviarMensagem("Passando ID " + eleito);
             }

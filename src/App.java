@@ -18,8 +18,27 @@ public class App {
         processos.get(4).setCoordenador(true);
 
         
-        // Executa os dois cenários
+        // Inicia todos os processos (como threads)
+        for (Processo p : processos) {
+            p.start();
+        }
+
+        // Aguarda 3 segundos e executa o cenário A
+        Thread.sleep(3000);
         Cenario_A.executar(processos);
+
+        // Aguarda mais 3 segundos e executa o cenário B
+        Thread.sleep(3000);
         Cenario_B.executar(processos);
+
+        // Aguarda 5 segundos e encerra todos os processos
+        Thread.sleep(5000);
+        for (Processo p : processos) {
+            p.pararExecucao();
+        }
+        System.out.println("Todos os processos foram sinalizados para parar.");
+
+        // Ajuste de segurança: força encerramento da JVM, garantindo que todas as threads parem
+        System.exit(0);
     }
 }

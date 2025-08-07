@@ -37,8 +37,7 @@ public class App {
             p.pararExecucao();
         }
         System.out.println("Todos os processos foram sinalizados para parar.");
-
-        // Ajuste de segurança: força encerramento da JVM, garantindo que todas as threads parem
+        
         System.exit(0);
     }
 }

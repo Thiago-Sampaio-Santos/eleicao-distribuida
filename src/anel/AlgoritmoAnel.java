@@ -26,7 +26,7 @@ public class AlgoritmoAnel {
         }
 
         for (Processo p : processos) {
-            p.setCoordenador(p.getId() == eleito);
+            p.setCoordenador(p.getProcessoId() == eleito);
         }
 
         Logger.novoCoordenador(eleito);

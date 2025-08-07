@@ -26,7 +26,7 @@ public class Logger {
         log("Novo coordenador eleito: Processo " + id);
     }
 
-        private static void salvarNoArquivo(String mensagem) {
+    private static void salvarNoArquivo(String mensagem) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(LOG_PATH, true))) {
             writer.println(mensagem);
         } catch (IOException e) {
